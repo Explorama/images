@@ -1,0 +1,12 @@
+test/leiningen/.m2
+.env
+*.secret
+prepared
+target
+package-lock.json
+out
+node_modules
+resources
+
+.clj-kondo/.cache
+.lsp/.cache
