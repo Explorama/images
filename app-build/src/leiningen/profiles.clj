@@ -1,6 +1,6 @@
 {:system {:plugins [[lein-pprint "1.3.2"]
                     [rewrite-clj "1.1.47"]
-                    [org.slf4j/jcl-over-slf4j "1.7.30"]
+                    [org.slf4j/jcl-over-slf4j "2.0.9"]
                     [commons-io "2.13.0"]
                     [org.clojure/data.json "2.4.0"]
                     [lein-ancient "0.7.0"]
