@@ -37,7 +37,7 @@ RUN apk add nodejs npm
 ## Install npm based tooling
 # These are required for karma based UI testing and creating license files from npm license checker 
 USER root
-RUN npm install -g karma@6.4.1 karma-coverage@2.2.0 karma-cli karma-chrome-launcher karma-cljs-test karma-junit-reporter karma-htmlfile-reporter license-checker --save-dev
+RUN npm install -g cobertura-merge karma@6.4.1 karma-coverage@2.2.0 karma-cli karma-chrome-launcher karma-cljs-test karma-junit-reporter karma-htmlfile-reporter license-checker --save-dev
 RUN wget -q "https://raw.githubusercontent.com/borkdude/jet/master/install" -O install-jet
 RUN chmod 0755 install-jet
 RUN ./install-jet
