@@ -6,7 +6,7 @@ RUN adduser -S -u 901 -G build build
 
 ## have required packages in place
 RUN apk update \
-    && apk add --no-cache bash git zip openssh ncurses gcc gnupg curl make python3 py3-pip jq chromium \
+    && apk add --no-cache bash git zip openssh ncurses gcc gnupg curl make python3 py3-pip jq chromium zstd \
     && apk --no-cache --update add build-base
 
 RUN wget -q "https://github.com/babashka/babashka/releases/download/v1.3.184/babashka-1.3.184-linux-amd64-static.tar.gz" -O bb.tar.gz
