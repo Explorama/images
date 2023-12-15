@@ -10,7 +10,14 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2 # Checking out the repo
+            - uses: dorny/paths-filter@v2
+              id: changes
+              with:
+                filters: |
+                  src:
+                    - '.app-build/**'
             - name: Build and Publish latest Docker image
+              if: steps.changes.outputs.src == 'true'
               uses: VaultVulp/gp-docker-action@1.6.0
               with:
                   github-token: ${{ secrets.GITHUB_TOKEN }} # Provide GITHUB_TOKEN to login into the GitHub Packages
@@ -20,8 +27,15 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2 # Checking out the repo
+            - uses: dorny/paths-filter@v2
+              id: changes
+              with:
+                filters: |
+                  src:
+                    - '.app-deploy/**'
             - name: Build and Publish latest Docker image
               uses: VaultVulp/gp-docker-action@1.6.0
+              if: steps.changes.outputs.src == 'true'
               with:
                   github-token: ${{ secrets.GITHUB_TOKEN }} # Provide GITHUB_TOKEN to login into the GitHub Packages
                   image-name: deploy-image # Provide only Docker image name, tag will be automatically set to latest

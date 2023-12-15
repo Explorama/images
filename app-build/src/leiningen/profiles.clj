@@ -1,5 +1,4 @@
-{:system {:local-repo ".m2/repository"
-          :plugins [[lein-pprint "1.3.2"]
+{:system {:plugins [[lein-pprint "1.3.2"]
                     [rewrite-clj "1.1.47"]
                     [org.slf4j/jcl-over-slf4j "1.7.30"]
                     [commons-io "2.13.0"]
