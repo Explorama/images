@@ -32,7 +32,7 @@ COPY src/leiningen/project.clj /home/build/project.clj
 
 ## Install nodejs and npm
 USER root
-RUN apk add --update nodejs=18.17.1-r0 npm
+RUN apk add nodejs npm
 
 ## Install npm based tooling
 # These are required for karma based UI testing and creating license files from npm license checker 
