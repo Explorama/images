@@ -13,6 +13,11 @@ RUN wget -q "https://github.com/babashka/babashka/releases/download/v1.3.184/bab
 RUN tar -xf bb.tar.gz && mv bb /usr/local/bin/bb && rm -f bb.tar.gz
 RUN chmod 0755 /usr/local/bin/bb
 
+# Install clj-kondo
+RUN wget https://raw.githubusercontent.com/clj-kondo/clj-kondo/master/script/install-clj-kondo \
+    && chmod +x install-clj-kondo \
+    && ./install-clj-kondo 
+
 # Add script to start chromium browser in container with limited environment
 COPY --chown=0:0 chromium-docker-launcher.sh /usr/bin/chromium-docker-launcher
 RUN chmod 755 /usr/bin/chromium-docker-launcher
