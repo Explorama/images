@@ -7,6 +7,7 @@ RUN apt-get update \
 
 RUN dpkg --add-architecture i386 && apt remove wine -y && apt remove wine-stable -y && rm -rf ~/.wine/
 RUN apt install wine -y
+RUN apt install openjdk-17-jre -y
 
 ## add leiningen
 RUN wget -q "https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein" -O /usr/local/bin/lein
