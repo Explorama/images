@@ -13,4 +13,9 @@ RUN apt install openjdk-17-jre -y
 RUN wget -q "https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein" -O /usr/local/bin/lein
 RUN chmod 0755 /usr/local/bin/lein
 
+## add babashka
+RUN wget -q "https://github.com/babashka/babashka/releases/download/v1.3.184/babashka-1.3.184-linux-amd64-static.tar.gz" -O bb.tar.gz
+RUN tar -xf bb.tar.gz && mv bb /usr/local/bin/bb && rm -f bb.tar.gz
+RUN chmod 0755 /usr/local/bin/bb
+
 COPY src/leiningen/profiles.clj /etc/leiningen/profiles.clj
