@@ -1,2 +1,0 @@
-(defproject setup "0"
-)

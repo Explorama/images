@@ -12,6 +12,4 @@ RUN apt install wine -y
 RUN wget -q "https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein" -O /usr/local/bin/lein
 RUN chmod 0755 /usr/local/bin/lein
 
-USER build
 COPY src/leiningen/profiles.clj /etc/leiningen/profiles.clj
-COPY src/leiningen/project.clj /home/build/project.clj
