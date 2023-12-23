@@ -5,10 +5,10 @@ RUN apt-get update \
     && apt-get install -y make nodejs zip unzip gcc g++ zstd \
     && npm install -g electron-packager
 
-RUN apt remove git -y
-RUN add-apt-repository ppa:git-core/ppa -y
-RUN apt update
-RUN apt install git -y
+# RUN apt remove git -y
+# RUN add-apt-repository ppa:git-core/ppa -y
+# RUN apt update
+# RUN apt install git -y
 
 RUN dpkg --add-architecture i386 && apt remove wine -y && apt remove wine-stable -y && rm -rf ~/.wine/
 RUN apt install wine -y
